@@ -26,7 +26,7 @@ RUN case ${TARGETPLATFORM} in \
     rm ~/mambaforge.sh
 
 RUN case ${TARGETPLATFORM} in \
-    "linux/arm64")  exit 1 ;; \
+    "linux/arm64")  /opt/conda/bin/conda update -y conda &&  \
     *)              /opt/conda/bin/conda update -y conda &&  \
     /opt/conda/bin/conda install -y "python=${PYTHON_VERSION}" ;; \
     esac && \
